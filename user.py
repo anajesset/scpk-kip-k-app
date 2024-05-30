@@ -37,9 +37,9 @@ def is_registered():
 
 def register():
     st.title('Registrasi Pengguna')
-    username = st.text_input('Username')
-    password = st.text_input('Password', type='password')
-    confirm_password = st.text_input('Confirm Password', type='password')
+    username = st.text_input('Username', key=3213)
+    password = st.text_input('Password', type='password', key=3213)
+    confirm_password = st.text_input('Confirm Password', type='password', key=3213)
 
     if password != confirm_password:
         st.error('Password dan konfirmasi password tidak cocok!')
