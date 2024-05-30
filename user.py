@@ -27,13 +27,7 @@ def verify_login(conn, username, password):
     return user
 
 def is_registered():
-    conn = create_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM users")
-    count = cursor.fetchone()[0]
-    cursor.close()
-    conn.close()
-    return count > 0
+    return False
 
 def register():
     st.title('Registrasi Pengguna')
@@ -51,7 +45,6 @@ def register():
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
 
-        st.experimental_rerun()
 
 def login():
     st.title('Login Admin')
