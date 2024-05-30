@@ -51,7 +51,7 @@ def register():
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
 
-        login()
+    return False
 
 def login():
     st.title('Login Admin')
