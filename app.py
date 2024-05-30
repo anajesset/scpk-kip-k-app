@@ -12,7 +12,7 @@ def main():
         register_successfull = register()
         if register_successfull:
             st.session_state.register = True
-            del st.session_state.register
+            del register_successfull
         else:
             st.warning('Silakan login terlebih dahulu!')
             return
