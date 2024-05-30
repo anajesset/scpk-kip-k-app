@@ -51,6 +51,10 @@ def register():
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
 
+        login()
+    if st.button('Login'):
+        login()
+
 def login():
     st.title('Login Admin')
     username = st.text_input('Username')
@@ -61,18 +65,14 @@ def login():
         user = verify_login(conn, username, password)
         if user:
             st.success(f'Login berhasil, Selamat datang, {username}!')
-            return "login"
+            return True
         else:
             st.error('Username atau password salah. Silakan coba lagi.')
-    if st.button('Register'):
-        return "register"
     return False
 
 def user():
-    if not is_registered():
-        register()
-    else:
-        login()
+    register()
+    
 
 if __name__ == '__main__':
     user()
