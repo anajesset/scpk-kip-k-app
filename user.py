@@ -58,7 +58,7 @@ def login():
     username = st.text_input('Username')
     password = st.text_input('Password', type='password')
 
-    if st.button('Login', key=1):
+    if st.button('Login', key=32134):
         conn = create_connection()
         user = verify_login(conn, username, password)
         if user:
@@ -67,7 +67,7 @@ def login():
         else:
             st.error('Username atau password salah. Silakan coba lagi.')
 
-    if st.button('Register', key=2):
+    if st.button('Register', key=321637):
         return register()
     return False
 
