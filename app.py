@@ -10,7 +10,7 @@ def main():
 
     if not st.session_state.register:
         register_successfull = register()
-        if register:
+        if register_successfull:
             st.session_state.register = True
         else:
             st.warning('Silakan login terlebih dahulu!')
