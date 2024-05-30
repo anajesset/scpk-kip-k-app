@@ -17,6 +17,9 @@ def main():
         if login_successful:
             st.session_state.logged_in = True
         else:
+            if st.button('Register', key=321637):
+                register()
+                return
             st.warning('Silakan login terlebih dahulu!')
             return
 
