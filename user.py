@@ -37,13 +37,19 @@ def register():
 
     if password != confirm_password:
         st.error('Password dan konfirmasi password tidak cocok!')
-        return
+        return False
 
     if st.button('Register'):
         conn = create_connection()
         register_user(conn, username, password)
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
+        return True
+
+    if st.button('Login'):
+        return True
+    
+    return False
 
 
 def login():

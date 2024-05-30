@@ -5,9 +5,16 @@ import home, daftar, ranking, prediksi, konsultasi
 def main():
     st.title('SPK Penerima Bantuan KIP-K')
 
-    if not is_registered():
-        register()
-        return
+    if 'register' not in st.session_state:
+        st.session_state.register = False
+
+    if not st.session_state.register:
+        register_successfull = register()
+        if register:
+            st.session_state.register = True
+        else:
+            st.warning('Silakan login terlebih dahulu!')
+            return
     
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
