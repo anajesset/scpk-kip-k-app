@@ -66,6 +66,9 @@ def login():
             return True
         else:
             st.error('Username atau password salah. Silakan coba lagi.')
+
+    if st.button('Register'):
+        register()
     return False
 
 def user():
