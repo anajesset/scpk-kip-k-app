@@ -24,15 +24,15 @@ def main():
     menu_selection = st.sidebar.radio('Pilih Menu:', ('Home', 'Daftar', 'Ranking', 'Prediksi', 'Konsultasi'))
 
     if menu_selection == 'Home':
-        st.switch_page('home.py')
+        st.switch_page('pages/home.py')
     elif menu_selection == 'Daftar':
-        st.switch_page('daftar.py')
+        st.switch_page('pages/daftar.py')
     elif menu_selection == 'Ranking':
-        st.switch_page('rangking.py')
+        st.switch_page('pages/rangking.py')
     elif menu_selection == 'Prediksi':
-        st.switch_page('prediksi.py')
+        st.switch_page('pages/prediksi.py')
     elif menu_selection == 'Konsultasi':
-        st.switch_page('konsultasi.py')
+        st.switch_page('pages/konsultasi.py')
 
 if __name__ == "__main__":
     main()
