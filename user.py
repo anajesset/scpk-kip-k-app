@@ -33,7 +33,7 @@ def is_registered():
     count = cursor.fetchone()[0]
     cursor.close()
     conn.close()
-    return count > 0
+    return count > 1
 
 def register():
     st.title('Registrasi Pengguna')
@@ -51,7 +51,7 @@ def register():
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
 
-        st.experimental_rerun()
+        login()
 
 def login():
     st.title('Login Admin')
