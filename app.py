@@ -14,8 +14,11 @@ def main():
 
     if not st.session_state.logged_in:
         login_successful = login()
-        if login_successful:
+        if login_successful == "login":
             st.session_state.logged_in = True
+        elif login_successful == 'register':
+            register()
+            return
         else:
             st.warning('Silakan login terlebih dahulu!')
             return
