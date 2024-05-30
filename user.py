@@ -51,9 +51,7 @@ def register():
         st.success('Registrasi berhasil! Silakan login.')
         st.info('Silakan login menggunakan akun yang telah Anda daftarkan.')
 
-        login()
-    if st.button('Login'):
-        login()
+        st.experimental_rerun()
 
 def login():
     st.title('Login Admin')
@@ -71,8 +69,10 @@ def login():
     return False
 
 def user():
-    register()
-    
+    if not is_registered():
+        register()
+    else:
+        login()
 
 if __name__ == '__main__':
     user()

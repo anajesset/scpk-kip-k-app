@@ -13,8 +13,8 @@ def main():
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        login_successful = register()
-        if login_successful == True:
+        login_successful = login()
+        if login_successful:
             st.session_state.logged_in = True
         else:
             st.warning('Silakan login terlebih dahulu!')
@@ -24,15 +24,15 @@ def main():
     menu_selection = st.sidebar.radio('Pilih Menu:', ('Home', 'Daftar', 'Ranking', 'Prediksi', 'Konsultasi'))
 
     if menu_selection == 'Home':
-        home.home()
+        st.switch_page('home.py')
     elif menu_selection == 'Daftar':
-        daftar.daftar()
+        st.switch_page('daftar.py')
     elif menu_selection == 'Ranking':
-        ranking.show_ranking()
+        st.switch_page('rangking.py')
     elif menu_selection == 'Prediksi':
-        prediksi.prediksi()
+        st.switch_page('prediksi.py')
     elif menu_selection == 'Konsultasi':
-        konsultasi.chatbot()
+        st.switch_page('konsultasi.py')
 
 if __name__ == "__main__":
     main()
