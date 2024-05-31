@@ -1,22 +1,23 @@
 import streamlit as st
-from user import is_registered, register, login
+from user import register, login, create_connection
 import home, daftar, ranking, prediksi, konsultasi
+
 
 def main():
     st.title('SPK Penerima Bantuan KIP-K')
 
-    if 'register' not in st.session_state:
-        st.session_state.register = False
+    if 'register_in' not in st.session_state:
+        st.session_state.register_in = False
 
-    if not st.session_state.register:
-        register_successfull = register()
-        if register_successfull:
-            st.session_state.register = True
-            del register_successfull
+    if not st.session_state.register_in:
+        register_successful = register()
+        if register_successful:
+            st.session_state.register_in = True
         else:
-            st.warning('Silakan login terlebih dahulu!')
+            st.warning('Silakan login apabila sudah memiliki akun')
             return
-    
+
+
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
 
@@ -41,6 +42,7 @@ def main():
         prediksi.prediksi()
     elif menu_selection == 'Konsultasi':
         konsultasi.chatbot()
+
 
 if __name__ == "__main__":
     main()
